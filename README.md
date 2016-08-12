@@ -25,7 +25,7 @@ yo angular-es2015
 
 ## License
 
-MIT © [Chihab Otmani](chihab.github.io)
+MIT © [Chihab Otmani](http://chihab.github.io)
 
 
 [npm-image]: https://badge.fury.io/js/generator-angular-es2015.svg
