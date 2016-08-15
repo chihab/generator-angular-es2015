@@ -1,5 +1,6 @@
 # generator-angular-es2015 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> Angular 1.x generator (ES2015)
+**[UNDER DEVELOPMENT]** Angular 1.x generator (ES2015)
+
 
 ## Installation
 

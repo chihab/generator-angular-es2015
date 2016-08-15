@@ -2,15 +2,13 @@
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
-var path = require('path');
-var _ = require('underscore.string');
+var _ = require('lodash');
 
 module.exports = yeoman.Base.extend({
   constructor: function () {
     yeoman.Base.apply(this, arguments);
-    this.argument('name', { type: String, required: false });
-    this.appname = this.appname || path.basename(process.cwd());
-    this.appname = _.camelize(_.slugify(_.humanize(this.appname)));
+    this.argument('appname', { type: String, required: true });
+    this.appname = _.camelCase(this.appname);
   },
 
   prompting: function () {
@@ -33,31 +31,17 @@ module.exports = yeoman.Base.extend({
   },
 
   writing: function () {
-    this.fs.copy(
-      this.templatePath('scripts'),
-      this.destinationPath('scripts')
-    );
-    this.fs.copy(
-      this.templatePath('webpack.config.js'),
-      this.destinationPath('webpack.config.js')
-    );
+    console.log('Application name ' + this.appname);
     this.fs.copyTpl(
-      this.templatePath('package.json'),
-      this.destinationPath('package.json'),
+      this.templatePath('scripts/components/sample/sample.controller.js'),
+      this.destinationPath('scripts/components/'+this.appname+'/'+this.appname+'.controller.js'),
       {
-        name: this.appname
-      }
-    );
-    this.fs.copyTpl(
-      this.templatePath('index.html'),
-      this.destinationPath('index.html'),
-      {
-        name: this.appname
+        name:this.appname
       }
     );
   },
 
   install: function () {
-    // this.installDependencies();
+    this.installDependencies();
   }
 });

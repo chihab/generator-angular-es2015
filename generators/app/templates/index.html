@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> <%= name %> </title>
+    <link rel="stylesheet" href="theme/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="theme/dist/css/AdminLTE.min.css" />
+    <link rel="stylesheet" href="theme/dist/css/skins/skin-blue.min.css" />
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div ng-app="app" class="wrapper">
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <po-navbar menu="menu"></po-navbar>
+            </section>
+        </aside>
+        <div class="content-wrapper" ui-view="">
+            <!-- There should be a default route otherwise we'd have a blank page ! -->
+        </div>
+    </div>        
+</body>
+
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="theme/bootstrap/js/bootstrap.min.js"></script>
+<script src="dist/bundle.scripts.js"></script>
+
+</html>
