@@ -1,8 +1,7 @@
 import angular from 'angular';
+//Hook1: import <%= objName %> from './<%= name %>';
 
-import SampleFilter from "./sample.filter";
-
-const Filters = angular.module('common.filters', [])
-    .filter('sampleFilter', SampleFilter)
+const Filters = angular.module('filters', [])
+    //Hook2: .filter('sampleFilter', SampleFilter)
 
 export default Filters.name;

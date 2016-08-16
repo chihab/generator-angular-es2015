@@ -1,7 +1,7 @@
 import angular from 'angular';
 //Hook1: import <%= objName %> from './<%= name %>';
 
-const Components = angular.module('common.components', [
+const Components = angular.module('components', [
   //Hook2: <%= objName %>,
 ])
 

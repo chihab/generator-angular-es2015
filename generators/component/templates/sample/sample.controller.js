@@ -1,4 +1,7 @@
 class <%= objName %>Controller {
+    constructor() {
+
+    }
     $onInit() {
     }
 }

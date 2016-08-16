@@ -9,7 +9,7 @@ import Filters from './filters';
 import Services from './services';
 import Components from './components';
 
-angular.module('app', [
+const App = angular.module('app', [
     uiRouter,
     ngCookies,
     ngSanitize,
@@ -19,3 +19,4 @@ angular.module('app', [
     Components    
   ]);
 
+export default App.name;

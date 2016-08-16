@@ -23,7 +23,7 @@ module.exports = {
         ]
     },    
     context: __dirname,
-    entry: "./scripts/app.js",
+    entry: "./scripts/index.js",
     output: {
         filename: "./dist/bundle.scripts.js"
     }, 

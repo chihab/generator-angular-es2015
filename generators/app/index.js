@@ -14,22 +14,19 @@ module.exports = yeoman.Base.extend({
   },
 
   prompting: function () {
-    // Have Yeoman greet the user.
     this.log(yosay(
       'Welcome to the impressive ' + chalk.red('generator-angular-es2015') + ' generator!'
     ));
 
-    // var prompts = [{
-    //   type: 'confirm',
-    //   name: 'someAnswer',
-    //   message: 'Would you like to enable this option?',
-    //   default: true
-    // }];
+    var prompts = [{
+      type: 'input',
+      name: 'title',
+      message: 'Please provide a title to your project.'
+    }];
 
-    // return this.prompt(prompts).then(function (props) {
-    //   // To access props later use this.props.someAnswer;
-    //   this.props = props;
-    // }.bind(this));
+    return this.prompt(prompts).then(function (props) {
+      this.props = props;
+    }.bind(this));
   },
 
   writing: function () {
@@ -40,6 +37,10 @@ module.exports = yeoman.Base.extend({
     this.fs.copy(
       this.templatePath('webpack.config.js'),
       this.destinationPath('webpack.config.js')
+    );
+    this.fs.copy(
+      this.templatePath('.yo-rc.json'),
+      this.destinationPath('.yo-rc.json')
     );
     this.fs.copyTpl(
       this.templatePath('package.json'),
@@ -52,7 +53,8 @@ module.exports = yeoman.Base.extend({
       this.templatePath('index.html'),
       this.destinationPath('index.html'),
       {
-        name: this.appname
+        name: this.appname,
+        title: this.props.title
       }
     );
   },

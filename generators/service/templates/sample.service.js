@@ -1,4 +1,4 @@
-class SampleService {
+class <%= objName %>Service {
   constructor() {
 
   }

@@ -1,10 +1,14 @@
 import <%= objName %>Component from './<%= name %>.component';
-// import <%= name %>Form from './<%= name %>-form'; 
 
-const <%= objName %> = angular.module('<%= name %>', [
-    // <%= name %>Form
-]);
-
-<%= objName %>.component('<%= name %>', <%= objName %>Component)
+const <%= objName %> = 
+    angular.module('<%= name %>', [])
+        .component('<%= camelName %>', <%= objName %>Component)
+        .config(($stateProvider, $urlRouterProvider) => {
+            $stateProvider
+            .state('<%= name %>', {
+                url: '/<%= name %>',
+                component: '<%= camelName %>'
+            })
+        })
 
 export default <%= objName %>.name;

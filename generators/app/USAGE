@@ -5,7 +5,7 @@ Example:
     yo angular-es2015
 
     This will create:
-        Gruntfile.js
+        webpack.config.js
         bower.json
 
         app/index.html
