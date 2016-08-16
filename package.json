@@ -25,6 +25,7 @@
   ],
   "dependencies": {
     "chalk": "^1.0.0",
+    "ejs": "^2.5.1",
     "underscore.string": "^3.3.4",
     "yeoman-generator": "^0.23.0",
     "yosay": "^1.0.0"

@@ -1,12 +1,8 @@
 import angular from 'angular';
-// Yeoman Hook
-// import <%= objName %> from './<%= name %>';
-// End Yeoman Hook
+//Hook1: import <%= objName %> from './<%= name %>';
 
 const Components = angular.module('common.components', [
-  // Yeoman Hook
-  // <%= objName %>
-  // End Yeoman Hook
-]);
+  //Hook2: <%= objName %>,
+])
 
 export default Components.name;
