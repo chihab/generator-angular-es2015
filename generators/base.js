@@ -13,6 +13,9 @@ module.exports = yeoman.Base.extend({
         this.objName = _.classify(this.name);
         this.name = this.name.toLowerCase();        
     },
+    folderPath: function(path, root) {
+      return this.destinationPath(this.path + (root?'':this.name+ '/') + path);
+    },
     hookTpl: function(file, hook, map) {
         try {
             var content = this.fs.read(file);

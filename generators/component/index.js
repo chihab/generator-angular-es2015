@@ -6,14 +6,11 @@ module.exports = Base.extend({
   constructor: function () {
     Base.apply(this, arguments);
     this.path = 'scripts/components/';
-    this.componentPath = function(path, root) {
-      return this.destinationPath(this.path + (root?'':this.name+ '/') + path);
-    }
   },
   writing: function () {
     this.fs.copyTpl(
       this.templatePath('sample/sample.controller.js'),
-      this.componentPath(this.name + '.controller.js'),
+      this.folderPath(this.name + '.controller.js'),
       {
         objName: this.objName,
         name: this.name
@@ -21,7 +18,7 @@ module.exports = Base.extend({
     );
     this.fs.copyTpl(
       this.templatePath('sample/sample.component.js'),
-      this.componentPath(this.name + '.component.js'),
+      this.folderPath(this.name + '.component.js'),
       {
         objName: this.objName,
         name: this.name
@@ -29,7 +26,7 @@ module.exports = Base.extend({
     );
     this.fs.copyTpl(
       this.templatePath('sample/sample.html'),
-      this.componentPath(this.name + '.html'),
+      this.folderPath(this.name + '.html'),
       {
         objName: this.objName,
         name: this.name
@@ -37,18 +34,18 @@ module.exports = Base.extend({
     );
     this.fs.copyTpl(
       this.templatePath('sample/index.js'),
-      this.componentPath('index.js'),
+      this.folderPath('index.js'),
       {
         camelName: this.camelName,
         objName: this.objName,
         name: this.name
       }
     );
-    this.hookTpl(this.componentPath('index.js', true), 'Hook1', {
+    this.hookTpl(this.folderPath('index.js', true), 'Hook1', {
       objName: this.objName,
       name: this.name
     });
-    this.hookTpl(this.componentPath('index.js', true), 'Hook2', {
+    this.hookTpl(this.folderPath('index.js', true), 'Hook2', {
       objName: this.objName
     });
   }
