@@ -1,7 +1,7 @@
 import angular from 'angular';
-//Hook1: import <%= objName %> from './<%= name %>';
+//Hook1: import <%= objName %>Filter from "./<%= name %>.filter";
 
 const Filters = angular.module('filters', [])
-    //Hook2: .filter('sampleFilter', SampleFilter)
+    //Hook2: .filter('<%= objName %>Service', <%= objName %>Filter)
 
 export default Filters.name;
