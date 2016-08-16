@@ -4,21 +4,22 @@ var Base = require('../base');
 module.exports = Base.extend({
   constructor: function () {
     Base.apply(this, arguments);
+    this.path = 'scripts/services/'
   },
   writing: function () {
     this.fs.copyTpl(
       this.templatePath('sample.service.js'),
-      this.destinationPath(this.name + '.service.js'),
+      this.folderPath(this.name + '.service.js', true),
       {
         objName: this.objName,
         name: this.name
       }
     );
-    this.hookTpl('index.js', 'Hook1', {
+    this.hookTpl(this.folderPath('index.js', true), 'Hook1', {
       objName: this.objName,
       name: this.name
     });
-    this.hookTpl('index.js', 'Hook2', {
+    this.hookTpl(this.folderPath('index.js', true), 'Hook2', {
       objName: this.objName
     });
   }

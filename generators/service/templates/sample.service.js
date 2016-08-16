@@ -3,3 +3,4 @@ class <%= objName %>Service {
 
   }
 }
+export default <%= objName %>Service;
