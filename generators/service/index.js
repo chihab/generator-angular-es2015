@@ -15,12 +15,13 @@ module.exports = Base.extend({
         name: this.name
       }
     );
-    this.hookTpl(this.folderPath('index.js', true), 'Hook1', {
-      objName: this.objName,
-      name: this.name
-    });
-    this.hookTpl(this.folderPath('index.js', true), 'Hook2', {
-      objName: this.objName
-    });
+    this.hookTpl(
+      this.folderPath('index.js', true),
+      ['Hook1', 'Hook2'],
+      {
+        objName: this.objName,
+        name: this.name
+      }
+    );
   }
 });
